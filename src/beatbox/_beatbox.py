@@ -317,7 +317,7 @@ class SoapEnvelope:
                     response = None
                 attempt += 1
         if not response:
-            raise RuntimeError, 'No response from Salesforce'
+            raise RuntimeError('No response from Salesforce')
 
         if response.getheader('content-encoding','') == 'gzip':
             rawResponse = gzip.GzipFile(fileobj=StringIO(rawResponse)).read()
